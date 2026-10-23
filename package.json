@@ -1,6 +1,6 @@
 {
   "name": "@vennahlot/dsh-tabs",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Chrome-style tabs for DSH chat sessions: a vertical or horizontal tab strip in your order, collapsible tab groups, each tab one session or a split of up to four live panes.",
   "license": "MIT",
   "author": "Yichen Wang",
