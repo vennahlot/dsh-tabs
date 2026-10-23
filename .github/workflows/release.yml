@@ -1,6 +1,8 @@
-# Push a tag vX.Y.Z (matching package.json's version) to publish:
-# npm (trusted publishing over OIDC, with provenance; no token stored) and a GitHub release
-# carrying dsh-tabs.tgz, the tarball the plugin registry installs from.
+# Push a tag vX.Y.Z (matching package.json's version) to release:
+# - npm: staged publish over OIDC trusted publishing (provenance, no token stored). The version
+#   goes live only after a maintainer approves it with 2FA (npmjs.com, Staged Packages tab, or
+#   `npm stage approve <id>`).
+# - GitHub: a release carrying dsh-tabs.tgz, the tarball the plugin registry installs from.
 name: release
 
 on:
@@ -25,7 +27,7 @@ jobs:
         run: test "v$(node -p 'require("./package.json").version')" = "$GITHUB_REF_NAME"
       - run: npm run check
       - run: npm test
-      - run: npm publish
+      - run: npm stage publish
       - name: GitHub release with dsh-tabs.tgz
         env:
           GH_TOKEN: ${{ github.token }}
