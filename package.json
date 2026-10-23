@@ -5,6 +5,16 @@
   "description": "Chrome-style tabs for DSH chat sessions: a vertical or horizontal tab strip in your order, collapsible tab groups, each tab one session or a split of up to four live panes.",
   "license": "MIT",
   "author": "Yichen Wang",
+  "homepage": "https://github.com/vennahlot/dsh-tabs#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vennahlot/dsh-tabs.git"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "tabs"
+  ],
   "type": "module",
   "exports": {
     ".": "./index.js",
