@@ -1,0 +1,7 @@
+# dsh-tabs: one row; the Host half (the state file and its route) and the Client half (the Tabs
+# page) load from it.
+- insert:
+    - id: dsh-tabs
+      name: '@yichenwang/dsh-tabs'
+      config: {}
+        # stateFile: ~/.dsh/dsh-tabs/state.json   # the tabs and groups (JSON, written by the page)
