@@ -3,6 +3,8 @@
 Chrome-style tabs for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (DSH)
 chat sessions, in the Web GUI.
 
+![dsh-tabs: a vertical tab strip with three tab groups (one collapsed) and a two-pane split](assets/screenshot-1.png)
+
 - **A tab strip in your order.** Opening a chat adds a tab at the end. Only opening, closing and
   dragging change the order; switching tabs never moves one.
 - **Vertical or horizontal.** Down the side (drag its edge to resize it, 180–560 px) or along the
