@@ -25,7 +25,7 @@
  * Harness Client package imports (only the browser module table's React); theme tokens only.
  */
 window.__ModuleLoader__.load({
-  id: '@yichenwang/dsh-tabs',
+  id: '@vennahlot/dsh-tabs',
   factory(require) {
     const React = require('react')
     const h = React.createElement

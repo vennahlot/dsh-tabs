@@ -2,6 +2,6 @@
 # page) load from it.
 - insert:
     - id: dsh-tabs
-      name: '@yichenwang/dsh-tabs'
+      name: '@vennahlot/dsh-tabs'
       config: {}
         # stateFile: ~/.dsh/dsh-tabs/state.json   # the tabs and groups (JSON, written by the page)

@@ -1,0 +1,34 @@
+# Push a tag vX.Y.Z (matching package.json's version) to publish:
+# npm (trusted publishing over OIDC, with provenance; no token stored) and a GitHub release
+# carrying dsh-tabs.tgz, the tarball the plugin registry installs from.
+name: release
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write   # create the release
+  id-token: write   # npm trusted publishing
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+      - run: npm install -g npm@latest
+      - name: Tag matches package.json
+        run: test "v$(node -p 'require("./package.json").version')" = "$GITHUB_REF_NAME"
+      - run: npm run check
+      - run: npm test
+      - run: npm publish
+      - name: GitHub release with dsh-tabs.tgz
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mv "$(npm pack --silent)" dsh-tabs.tgz
+          gh release create "$GITHUB_REF_NAME" dsh-tabs.tgz --title "$GITHUB_REF_NAME" --generate-notes

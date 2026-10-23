@@ -28,6 +28,12 @@ session's normal full page (⤢); **Back to tabs** returns.
 Requires DSH with the Web GUI (`dsh web`).
 
 ```sh
+dsh plugin --profile web add @vennahlot/dsh-tabs
+```
+
+Or from a clone, to hack on it:
+
+```sh
 git clone https://github.com/vennahlot/dsh-tabs.git
 dsh plugin --profile web add link:$PWD/dsh-tabs
 ```
